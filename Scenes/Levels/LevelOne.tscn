@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://brd7r21j06a4n"]
+
+[ext_resource type="Texture2D" uid="uid://dna3vmn21j3no" path="res://Art/Levels/photo_2026-11-09_13-37-49.jpg" id="1_vwlbn"]
+
+[node name="Node2D" type="Sprite2D" unique_id=215302438]
+texture = ExtResource("1_vwlbn")
+centered = false
