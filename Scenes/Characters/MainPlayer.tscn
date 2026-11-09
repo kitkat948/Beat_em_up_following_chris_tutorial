@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://bwsxpx3xqjeon"]
 
 [ext_resource type="PackedScene" uid="uid://dxfu45e6bt033" path="res://Scenes/Characters/DefaultCharacter.tscn" id="1_oopdl"]
+[ext_resource type="Texture2D" uid="uid://ns2yxbgynjfg" path="res://Art/Players/icon.svg" id="2_t1bcf"]
 
 [node name="Player" unique_id=771166640 instance=ExtResource("1_oopdl")]
+speed = 20.0
+
+[node name="CharacterSprite" parent="." index="0" unique_id=281063545]
+texture = ExtResource("2_t1bcf")
