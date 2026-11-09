@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://brd7r21j06a4n"]
+
+[node name="LevelSprite" type="Sprite2D" unique_id=215302438]
+centered = false

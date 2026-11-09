@@ -4,7 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://ns2yxbgynjfg" path="res://Art/Players/icon.svg" id="2_t1bcf"]
 
 [node name="Player" unique_id=771166640 instance=ExtResource("1_oopdl")]
+collision_layer = 2
+collision_mask = 9
 speed = 20.0
 
 [node name="CharacterSprite" parent="." index="0" unique_id=281063545]
 texture = ExtResource("2_t1bcf")
+
+[node name="Camera2D" type="Camera2D" parent="." index="3" unique_id=1971304598]
+limit_left = 0
+limit_top = 0
+limit_right = 10000
+limit_bottom = 565
+position_smoothing_enabled = true

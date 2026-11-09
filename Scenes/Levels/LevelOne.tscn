@@ -1,7 +1,30 @@
-[gd_scene format=3 uid="uid://brd7r21j06a4n"]
+[gd_scene format=3 uid="uid://dwetlwauff08p"]
 
+[ext_resource type="PackedScene" uid="uid://brd7r21j06a4n" path="res://Scenes/Levels/Levels.tscn" id="1_roxgl"]
 [ext_resource type="Texture2D" uid="uid://dna3vmn21j3no" path="res://Art/Levels/photo_2026-11-09_13-37-49.jpg" id="1_vwlbn"]
 
-[node name="Node2D" type="Sprite2D" unique_id=215302438]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(2812.25, 313)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wook"]
+size = Vector2(143.5625, 580.5)
+
+[node name="LevelOneSprite" unique_id=215302438 instance=ExtResource("1_roxgl")]
 texture = ExtResource("1_vwlbn")
-centered = false
+
+[node name="Walls" type="Node2D" parent="." index="0" unique_id=1142029012]
+
+[node name="StaticBodyWalls" type="StaticBody2D" parent="Walls" index="0" unique_id=1599640677]
+collision_mask = 0
+
+[node name="UpperWall" type="CollisionShape2D" parent="Walls/StaticBodyWalls" index="0" unique_id=1367884856]
+position = Vector2(1284, 157.5)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="LowerWall" type="CollisionShape2D" parent="Walls/StaticBodyWalls" index="1" unique_id=160878112]
+position = Vector2(1279, 722)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls/StaticBodyWalls" index="2" unique_id=1135103736]
+position = Vector2(-72, 503)
+shape = SubResource("RectangleShape2D_8wook")
