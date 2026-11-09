@@ -1,7 +1,137 @@
 [gd_scene format=3 uid="uid://bwsxpx3xqjeon"]
 
 [ext_resource type="PackedScene" uid="uid://dxfu45e6bt033" path="res://Scenes/Characters/DefaultCharacter.tscn" id="1_oopdl"]
-[ext_resource type="Texture2D" uid="uid://ns2yxbgynjfg" path="res://Art/Players/icon.svg" id="2_t1bcf"]
+[ext_resource type="Texture2D" uid="uid://cg7yn4kckx8pc" path="res://Art/Players/Final character sprite sheet.png" id="2_t1bcf"]
+
+[sub_resource type="Animation" id="Animation_mkbcw"]
+resource_name = "BlueBlast"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_wr58b"]
+resource_name = "Climb"
+length = 0.33333334
+loop_mode = 2
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [20, 21]
+}
+
+[sub_resource type="Animation" id="Animation_valxk"]
+resource_name = "GreenBlast"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_is3gj"]
+resource_name = "PinkBlast"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_t1bcf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_to5cn"]
+resource_name = "Walk"
+length = 0.45
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [25, 26, 27, 24]
+}
+
+[sub_resource type="Animation" id="Animation_4dabp"]
+resource_name = "YellowBlast"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkbcw"]
+_data = {
+&"BlueBlast": SubResource("Animation_mkbcw"),
+&"Climb": SubResource("Animation_wr58b"),
+&"GreenBlast": SubResource("Animation_valxk"),
+&"PinkBlast": SubResource("Animation_is3gj"),
+&"RESET": SubResource("Animation_t1bcf"),
+&"Walk": SubResource("Animation_to5cn"),
+&"YellowBlast": SubResource("Animation_4dabp")
+}
 
 [node name="Player" unique_id=771166640 instance=ExtResource("1_oopdl")]
 collision_layer = 2
@@ -9,7 +139,19 @@ collision_mask = 9
 speed = 20.0
 
 [node name="CharacterSprite" parent="." index="0" unique_id=281063545]
+position = Vector2(-106, -251)
+scale = Vector2(0.135, 0.135)
 texture = ExtResource("2_t1bcf")
+offset = Vector2(0, 0)
+hframes = 4
+vframes = 7
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=479145304]
+libraries/ = SubResource("AnimationLibrary_mkbcw")
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=310693006]
+position = Vector2(2.1316279e-14, -14.000001)
+scale = Vector2(0.96, 0.96)
 
 [node name="Camera2D" type="Camera2D" parent="." index="3" unique_id=1971304598]
 limit_left = 0
