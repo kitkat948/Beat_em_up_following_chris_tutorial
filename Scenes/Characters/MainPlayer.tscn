@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwsxpx3xqjeon"]
 
 [ext_resource type="PackedScene" uid="uid://dxfu45e6bt033" path="res://Scenes/Characters/DefaultCharacter.tscn" id="1_oopdl"]
-[ext_resource type="Texture2D" uid="uid://cl6tqepidbgiq" path="res://Art/Players/Improved walk cycle full sprite sheet.png" id="2_t1bcf"]
+[ext_resource type="Texture2D" uid="uid://c0drumjragmuk" path="res://Art/Players/FINALPLAYER.png" id="2_t1bcf"]
 
 [sub_resource type="Animation" id="Animation_mkbcw"]
 resource_name = "BlueBlast"
