@@ -9,4 +9,4 @@
 
 [node name="Player" parent="." unique_id=771166640 instance=ExtResource("2_6pun2")]
 position = Vector2(463, 523)
-speed = 200.0
+speed = 600.0
