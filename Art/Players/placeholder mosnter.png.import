@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl6tqepidbgiq"
-path="res://.godot/imported/Improved walk cycle full sprite sheet.png-e43a44e65719baf352327810c3214972.ctex"
+uid="uid://jpuiyj7n0pbw"
+path="res://.godot/imported/placeholder mosnter.png-1a9180687c1e9bd092f1329fe8600858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Players/Improved walk cycle full sprite sheet.png"
-dest_files=["res://.godot/imported/Improved walk cycle full sprite sheet.png-e43a44e65719baf352327810c3214972.ctex"]
+source_file="res://Art/Players/placeholder mosnter.png"
+dest_files=["res://.godot/imported/placeholder mosnter.png-1a9180687c1e9bd092f1329fe8600858.ctex"]
 
 [params]
 

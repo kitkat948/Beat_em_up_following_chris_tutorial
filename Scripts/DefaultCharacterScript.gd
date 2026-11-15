@@ -23,9 +23,25 @@ func _physics_process(_delta):
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_direction * speed
+	if can_attack() and Input.is_action_just_pressed("BlueBlast"):
+		state = State.BLUE_BLAST
+	if can_attack() and Input.is_action_just_pressed("GreenBlast"):
+		state = State.GREEN_BLAST
+	if can_attack() and Input.is_action_just_pressed("PinkBlast"):
+		state = State.PINK_BLAST
+	if can_attack() and Input.is_action_just_pressed("YellowBlast"):
+		state = State.YELLOW_BLAST
 	
 	
 func movement_handling() -> void:
+	if state == State.BLUE_BLAST:
+		return
+	if state == State.GREEN_BLAST:
+		return
+	if state == State.PINK_BLAST:
+		return
+	if state == State.YELLOW_BLAST:
+		return
 	if velocity.length() == 0:
 		state = State.IDLE
 	else:
@@ -54,8 +70,19 @@ func sprite_flip() -> void:
 		character_sprite.flip_h = false
 	if velocity.x < 0:
 		character_sprite.flip_h = true
-	
-	
-	
-	
 		
+func can_attack() -> bool:
+	return state == State.IDLE or state == State.WALK
+	
+
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "BlueBlast":
+		state = State.IDLE
+	if anim_name == "GreenBlast":
+		state = State.IDLE
+	if anim_name == "PinkBlast":
+		state = State.IDLE
+	if anim_name == "YellowBlast":
+		state = State.IDLE

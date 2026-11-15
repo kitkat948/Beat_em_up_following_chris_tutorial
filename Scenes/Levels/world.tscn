@@ -2,11 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://dwetlwauff08p" path="res://Scenes/Levels/LevelOne.tscn" id="1_v6wy8"]
 [ext_resource type="PackedScene" uid="uid://bwsxpx3xqjeon" path="res://Scenes/Characters/MainPlayer.tscn" id="2_6pun2"]
+[ext_resource type="PackedScene" uid="uid://dxou5cbw68cfd" path="res://Destructables/Box_Destructable.tscn" id="2_nbifx"]
 
 [node name="World" type="Node2D" unique_id=1063734432]
+y_sort_enabled = true
 
 [node name="LevelSprite" parent="." unique_id=215302438 instance=ExtResource("1_v6wy8")]
 
 [node name="Player" parent="." unique_id=771166640 instance=ExtResource("2_6pun2")]
 position = Vector2(463, 523)
 speed = 600.0
+
+[node name="Node2D" parent="." unique_id=1816609543 instance=ExtResource("2_nbifx")]
+position = Vector2(1260, 506)

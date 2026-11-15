@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u33hs3o53vqc"
-path="res://.godot/imported/Even more improved walk cycle full sprite sheet.png-e7db4df3cab95b483d0e62c98fc84d51.ctex"
+uid="uid://1mpwivvpnbfu"
+path="res://.godot/imported/Box.png-74fba7ffcb2bedbfe425c1b65692de0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Players/Even more improved walk cycle full sprite sheet.png"
-dest_files=["res://.godot/imported/Even more improved walk cycle full sprite sheet.png-e7db4df3cab95b483d0e62c98fc84d51.ctex"]
+source_file="res://Art/Destructables/Box.png"
+dest_files=["res://.godot/imported/Box.png-74fba7ffcb2bedbfe425c1b65692de0f.ctex"]
 
 [params]
 

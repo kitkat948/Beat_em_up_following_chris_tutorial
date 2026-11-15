@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg7yn4kckx8pc"
-path="res://.godot/imported/Final character sprite sheet.png-c96222faf58cf50486858e7b0e1aaf36.ctex"
+uid="uid://12jvf8huvpa8"
+path="res://.godot/imported/placeholder box.png-e7570233133dc0e7511dd1e9c3dcd78e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Players/Final character sprite sheet.png"
-dest_files=["res://.godot/imported/Final character sprite sheet.png-c96222faf58cf50486858e7b0e1aaf36.ctex"]
+source_file="res://Art/Destructables/placeholder box.png"
+dest_files=["res://.godot/imported/placeholder box.png-e7570233133dc0e7511dd1e9c3dcd78e.ctex"]
 
 [params]
 

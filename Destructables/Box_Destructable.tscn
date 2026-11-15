@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dxou5cbw68cfd"]
+
+[ext_resource type="Texture2D" uid="uid://1mpwivvpnbfu" path="res://Art/Destructables/Box.png" id="1_udti7"]
+[ext_resource type="Texture2D" uid="uid://vwprsj6dtlre" path="res://Art/Destructables/Open_Box.png" id="2_ef0uc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
+height = 146.0
+
+[node name="StaticBodyBox" type="StaticBody2D" unique_id=1816609543]
+collision_layer = 8
+collision_mask = 8
+
+[node name="Box" type="Sprite2D" parent="." unique_id=892155530]
+position = Vector2(-82, -146.00002)
+scale = Vector2(0.10246915, 0.06759258)
+texture = ExtResource("1_udti7")
+centered = false
+
+[node name="Open_Box" type="Sprite2D" parent="." unique_id=1371731084]
+visible = false
+position = Vector2(-82, -147)
+scale = Vector2(0.10123455, 0.068055555)
+texture = ExtResource("2_ef0uc")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1927525071]
+position = Vector2(0, -10)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1vivr")
