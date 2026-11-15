@@ -19,3 +19,9 @@ offset = Vector2(-64, -128)
 position = Vector2(0, -15)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_cd2ko")
+
+[node name="Punch" type="Area2D" parent="." unique_id=215556979]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Punch" unique_id=1727252878]
+
+[connection signal="area_entered" from="Punch" to="." method="_on_punch_area_entered"]

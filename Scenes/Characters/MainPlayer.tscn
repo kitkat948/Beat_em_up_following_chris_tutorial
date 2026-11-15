@@ -151,12 +151,13 @@ _data = {
 &"YellowBlast": SubResource("Animation_4dabp")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
-size = Vector2(186, 267.75)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_defd3"]
+size = Vector2(185, 269.5)
 
 [node name="Player" unique_id=771166640 instance=ExtResource("1_oopdl")]
 collision_layer = 2
 collision_mask = 9
+damage = 1
 speed = 20.0
 
 [node name="CharacterSprite" parent="." index="0" unique_id=281063545]
@@ -182,16 +183,13 @@ limit_right = 10000
 limit_bottom = 565
 position_smoothing_enabled = true
 
-[node name="PunchArea" type="Area2D" parent="." index="4" unique_id=973539534]
-collision_layer = 2
-collision_mask = 40
-monitoring = false
+[node name="Punch" parent="." index="4" unique_id=215556979]
+collision_layer = 0
+collision_mask = 32
 
-[node name="PunchShape" type="CollisionShape2D" parent="PunchArea" index="0" unique_id=1149435682]
-position = Vector2(5, -118)
-shape = SubResource("RectangleShape2D_1vivr")
-debug_color = Color(0.9841493, 0.1169771, 0.1114401, 0.41960785)
+[node name="CollisionShape2D" parent="Punch" index="0" unique_id=1727252878]
+position = Vector2(0, -135)
+shape = SubResource("RectangleShape2D_defd3")
+debug_color = Color(0.99168617, 0.07839619, 0.09819687, 0.41960785)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="area_entered" from="PunchArea" to="." method="_on_punch_area_area_entered"]
-[connection signal="body_entered" from="PunchArea" to="." method="_on_punch_area_body_entered"]
