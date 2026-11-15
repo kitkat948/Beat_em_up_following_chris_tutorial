@@ -52,6 +52,7 @@ YellowBlast={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Destructables"
 2d_physics/layer_5="Collectables"
+2d_physics/layer_6="Hitbox_Receive"
 
 [physics]
 

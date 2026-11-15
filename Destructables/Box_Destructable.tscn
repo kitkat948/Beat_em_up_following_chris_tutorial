@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://dxou5cbw68cfd"]
 
+[ext_resource type="Script" uid="uid://g0ad2da76xt8" path="res://Scripts/box_destructable.gd" id="1_ef0uc"]
 [ext_resource type="Texture2D" uid="uid://1mpwivvpnbfu" path="res://Art/Destructables/Box.png" id="1_udti7"]
 [ext_resource type="Texture2D" uid="uid://vwprsj6dtlre" path="res://Art/Destructables/Open_Box.png" id="2_ef0uc"]
+[ext_resource type="PackedScene" uid="uid://de2wc01a507am" path="res://Scenes/CollisionScenes/Hitbox.tscn" id="4_kjy7l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1vivr"]
 height = 146.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwf2k"]
+size = Vector2(89, 164.00003)
+
 [node name="StaticBodyBox" type="StaticBody2D" unique_id=1816609543]
 collision_layer = 8
 collision_mask = 8
+script = ExtResource("1_ef0uc")
 
 [node name="Box" type="Sprite2D" parent="." unique_id=892155530]
 position = Vector2(-82, -146.00002)
@@ -27,3 +33,13 @@ centered = false
 position = Vector2(0, -10)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_1vivr")
+
+[node name="Hitbox" parent="." unique_id=888191349 instance=ExtResource("4_kjy7l")]
+position = Vector2(0, -10)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1983084481]
+position = Vector2(-34.5, -0.9999946)
+shape = SubResource("RectangleShape2D_iwf2k")
+
+[editable path="Hitbox"]

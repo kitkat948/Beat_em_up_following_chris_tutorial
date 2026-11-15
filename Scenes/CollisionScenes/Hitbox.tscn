@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://de2wc01a507am"]
+
+[node name="Hitbox" type="Area2D" unique_id=888191349]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983084481]

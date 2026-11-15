@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var character_sprite: Sprite2D = $CharacterSprite
+@onready var punch_area: Area2D = $PunchArea
 
 enum State{IDLE, BLUE_BLAST, CLIMB, GREEN_BLAST, PINK_BLAST, WALK, YELLOW_BLAST}
 
@@ -20,17 +21,22 @@ func _physics_process(_delta):
 	sprite_flip()
 	move_and_slide()
 
+
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_direction * speed
 	if can_attack() and Input.is_action_just_pressed("BlueBlast"):
 		state = State.BLUE_BLAST
+		punch_area.monitoring = true
 	if can_attack() and Input.is_action_just_pressed("GreenBlast"):
 		state = State.GREEN_BLAST
+		punch_area.monitoring = true
 	if can_attack() and Input.is_action_just_pressed("PinkBlast"):
 		state = State.PINK_BLAST
+		punch_area.monitoring = true
 	if can_attack() and Input.is_action_just_pressed("YellowBlast"):
 		state = State.YELLOW_BLAST
+		punch_area.monitoring = true
 	
 	
 func movement_handling() -> void:
@@ -80,9 +86,18 @@ func can_attack() -> bool:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "BlueBlast":
 		state = State.IDLE
+		punch_area.monitoring = false
 	if anim_name == "GreenBlast":
 		state = State.IDLE
+		punch_area.monitoring = false
 	if anim_name == "PinkBlast":
 		state = State.IDLE
+		punch_area.monitoring = false
 	if anim_name == "YellowBlast":
 		state = State.IDLE
+		punch_area.monitoring = false
+
+
+func _on_punch_area_area_entered(area: Area2D) -> void:
+	if area.get_parent().has_method("take_damage"):
+		area.get_parent().take_damage(1)
