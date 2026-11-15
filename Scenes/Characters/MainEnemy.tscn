@@ -1,5 +1,112 @@
 [gd_scene format=3 uid="uid://bsmvfdov43mir"]
 
 [ext_resource type="PackedScene" uid="uid://dxfu45e6bt033" path="res://Scenes/Characters/DefaultCharacter.tscn" id="1_57ijw"]
+[ext_resource type="Texture2D" uid="uid://cfgghvws6yuok" path="res://Art/Destructables/improved placeholder monster.png" id="2_xo2b8"]
 
-[node name="Player" unique_id=771166640 instance=ExtResource("1_57ijw")]
+[sub_resource type="Animation" id="Animation_84p0d"]
+resource_name = "Attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_s3s74"]
+resource_name = "Hurt"
+length = 0.19999999999999998
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 8]
+}
+
+[sub_resource type="Animation" id="Animation_xo2b8"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_qv2fd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_a323i"]
+resource_name = "Walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.44999996),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a323i"]
+_data = {
+&"Attack": SubResource("Animation_84p0d"),
+&"Hurt": SubResource("Animation_s3s74"),
+&"Idle": SubResource("Animation_xo2b8"),
+&"RESET": SubResource("Animation_qv2fd"),
+&"Walk": SubResource("Animation_a323i")
+}
+
+[node name="Enemy" unique_id=771166640 instance=ExtResource("1_57ijw")]
+collision_layer = 4
+collision_mask = 13
+damage = 5
+speed = 30.0
+
+[node name="CharacterSprite" parent="." index="0" unique_id=281063545]
+position = Vector2(-51, -200)
+scale = Vector2(0.100370884, 0.09794601)
+texture = ExtResource("2_xo2b8")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=479145304]
+libraries/ = SubResource("AnimationLibrary_a323i")
+autoplay = &"Idle"

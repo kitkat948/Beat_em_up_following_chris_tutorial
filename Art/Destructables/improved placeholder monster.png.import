@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jpuiyj7n0pbw"
-path="res://.godot/imported/placeholder mosnter.png-1a9180687c1e9bd092f1329fe8600858.ctex"
+uid="uid://cfgghvws6yuok"
+path="res://.godot/imported/improved placeholder monster.png-1280736c143b4c61c5cdf32752b2ed40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Players/placeholder mosnter.png"
-dest_files=["res://.godot/imported/placeholder mosnter.png-1a9180687c1e9bd092f1329fe8600858.ctex"]
+source_file="res://Art/Destructables/improved placeholder monster.png"
+dest_files=["res://.godot/imported/improved placeholder monster.png-1280736c143b4c61c5cdf32752b2ed40.ctex"]
 
 [params]
 
